@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Página com Menu e Divs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        /* Estilo do menu */
+        #menu {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu-item {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .menu-item:hover {
+            background-color: #555;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Layout das divs principais */
+        .area-principal {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        #container {
+            border: 2px solid #000;
+            padding: 15px;
+            width: 360px;
+            background-color: #f9f9f9;
+        }
+
+        .minhaDiv {
+            width: 300px;
+            height: 100px;
+            border: 2px solid #444;
+            margin: 10px auto;
+            padding: 10px;
+        }
+
+        #divLateral {
+            border: 2px dashed #007bff;
+            width: 200px;
+            padding: 15px;
+            background-color: #e7f1ff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu no topo -->
+    <div id="menu">
+        <div class="menu-item">Início</div>
+        <div class="menu-item">Sobre</div>
+        <div class="menu-item">Serviços</div>
+        <div class="menu-item">Contato</div>
+    </div>
+
+    <!-- Área principal com as divs -->
+    <div class="area-principal">
+        <!-- Div da esquerda -->
+        <div id="container">
+            <p id="mensagemContainer"></p>
+            <div id="div1" class="minhaDiv"></div>
+            <div id="div2" class="minhaDiv"></div>
+        </div>
+
+        <!-- Div da direita -->
+        <div id="divLateral">
+            <p id="mensagemLateral"></p>
+        </div>
+    </div>
+
+    <script>
+        // Mensagem no container
+        document.getElementById("mensagemContainer").innerText = "Bem-vindo! Esta é a div principal (container).";
+
+        // Mensagens nas divs internas
+        document.getElementById("div1").innerText = "Div 1: Conteúdo inserido via JavaScript.";
+        document.getElementById("div2").innerText = "Div 2: Também com conteúdo dinâmico.";
+
+        // Mensagem na div lateral
+        document.getElementById("mensagemLateral").innerText = "Esta é a div lateral. Aqui também vai conteúdo!";
+    </script>
+
+</body>
+</html>

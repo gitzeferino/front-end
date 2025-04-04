@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo com Div e JavaScript</title>
+    <style>
+        #minhaDiv {
+            width: 300px;
+            height: 100px;
+            border: 2px solid #333;
+            padding: 10px;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Mensagem via JavaScript:</h2>
+    
+    <div id="minhaDiv">
+
+        <!-- O conteúdo será inserido via JavaScript -->
+    </div>
+
+    <script>
+        // Seleciona a div pelo ID e insere um texto
+        document.getElementById("minhaDiv").innerText = "Olá! Esta mensagem foi gerada com JavaScript.";
+    </script>
+
+</body>
+</html>

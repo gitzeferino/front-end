@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Duas Divs com JavaScript</title>
+    <style>
+        .minhaDiv {
+            width: 300px;
+            height: 100px;
+            border: 2px solid #444;
+            margin: 10px 0;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Exemplo com duas divs</h2>
+
+    <div id="div1" class="minhaDiv"></div>
+    <div id="div2" class="minhaDiv"></div>
+
+    <script>
+        // Atualizando o conteúdo das duas divs
+        document.getElementById("div1").innerText = "Esta é a primeira div, preenchida com JavaScript.";
+        document.getElementById("div2").innerText = "Esta é a segunda div, também preenchida com JavaScript.";
+    </script>
+
+</body>
+</html>
