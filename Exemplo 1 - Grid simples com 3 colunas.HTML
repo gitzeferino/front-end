@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo Grid 1</title>
+  <style>
+    .grid-container {
+      display: grid; /* Define o layout como grid */
+      grid-template-columns: 1fr 1fr 1fr; /* Cria 3 colunas de tamanhos iguais */
+      gap: 10px; /* Espaço entre os elementos */
+      padding: 10px;
+    }
+    .grid-item {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Grid com 3 colunas</h2>
+Explicação:<br>
+
+A div.grid-container é o container do grid.<br>
+A propriedade display: grid define que vamos usar grid layout.<br>
+grid-template-columns: 1fr 1fr 1fr define 3 colunas com largura igual (1 parte para cada uma).<br>
+gap: 10px define o espaçamento entre os elementos da grade.<br>
+Cada div.grid-item representa um item dentro do grid e será distribuído nas colunas automaticamente.<br>
+Ideal para: criar layouts de cartões, galerias, ou distribuições regulares.<br>
+  <div class="grid-container">
+    <div class="grid-item">Item 1</div>
+    <div class="grid-item">Item 2</div>
+    <div class="grid-item">Item 3</div>
+    <div class="grid-item">Item 4</div>
+    <div class="grid-item">Item 5</div>
+    <div class="grid-item">Item 6</div>
+  </div>
+</body>
+</html>
