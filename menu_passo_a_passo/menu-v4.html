@@ -1,0 +1,98 @@
+<!-- Versão Final Profissional - Com fontes externas e transições -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu Profissional</title>
+
+  <!-- Importando fonte moderna do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box; /* Controle total do layout */
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif; /* Fonte moderna */
+      background-color: #f9f9f9;        /* Fundo claro suave */
+    }
+
+    .menu-pro {
+      background-color: #1e1e2f;         /* Cor escura elegante */
+      padding: 20px 40px;                /* Espaço interno */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra leve */
+      position: relative;
+      z-index: 1000;
+    }
+
+    .menu-pro ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;  /* Centraliza horizontalmente */
+      flex-wrap: wrap;
+      gap: 40px;                /* Espaço entre links */
+    }
+
+    .menu-pro a {
+      text-decoration: none;
+      color: #f1f1f1;           /* Texto claro */
+      font-weight: 600;
+      font-size: 16px;
+      position: relative;
+      padding: 8px 4px;
+      transition: color 0.3s ease; /* Animação suave */
+    }
+
+    .menu-pro a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background-color: #00b894;    /* Cor do destaque */
+      transition: width 0.3s ease;  /* Animação de sublinhado */
+    }
+
+    .menu-pro a:hover {
+      color: #00b894;               /* Cor ao passar o mouse */
+    }
+
+    .menu-pro a:hover::after {
+      width: 100%;                  /* Sublinhado animado */
+    }
+
+    @media (max-width: 768px) {
+      .menu-pro {
+        padding: 15px 20px;
+      }
+
+      .menu-pro ul {
+        flex-direction: column;    /* Vertical no mobile */
+        gap: 15px;
+        align-items: center;
+      }
+
+      .menu-pro a {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu de navegação principal -->
+  <nav class="menu-pro">
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>

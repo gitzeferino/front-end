@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu com Dropdown Funcional</title>
+
+  <!-- Fonte elegante -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Estilo principal do menu */
+    .menu-pro {
+      background-color: #1e1e2f;
+      padding: 20px 40px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 1000;
+    }
+
+    /* Lista dos itens do menu */
+    .menu-pro ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    /* Cada item (li) é relativo para posicionar o dropdown */
+    .menu-pro li {
+      position: relative;
+    }
+
+    /* Links principais */
+    .menu-pro a {
+      text-decoration: none;
+      color: #f1f1f1;
+      font-weight: 600;
+      font-size: 16px;
+      position: relative;
+      padding: 8px 4px;
+      transition: color 0.3s ease;
+    }
+
+    /* Linha animada sob o link */
+    .menu-pro a::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background-color: #00b894;
+      transition: width 0.3s ease;
+    }
+
+    .menu-pro a:hover {
+      color: #00b894;
+    }
+
+    .menu-pro a:hover::after {
+      width: 100%;
+    }
+
+    /* Submenu oculto inicialmente */
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%; /* Mostra logo abaixo do item pai */
+      left: 0;
+      background-color: #2c2c3f;
+      min-width: 160px;
+      border-radius: 6px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+      flex-direction: column;
+      padding: 8px 0;
+      z-index: 999;
+    }
+
+    /* Estilo dos links dentro do dropdown */
+    .dropdown a {
+      padding: 10px 20px;
+      display: block;
+      font-size: 14px;
+      color: #f1f1f1;
+    }
+
+    .dropdown a:hover {
+      background-color: #00b894;
+      color: #fff;
+    }
+
+    /* MOSTRAR DROPDOWN ao passar mouse no item pai */
+    .menu-pro li:hover .dropdown,
+    .menu-pro li:focus-within .dropdown {
+      display: flex;
+    }
+
+    /* Responsivo para celular */
+    @media (max-width: 768px) {
+      .menu-pro {
+        padding: 15px 20px;
+      }
+
+      .menu-pro ul {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .menu-pro a {
+        font-size: 18px;
+      }
+
+      .dropdown {
+        position: static;
+        box-shadow: none;
+        background-color: #1e1e2f;
+        border-radius: 0;
+      }
+
+      .menu-pro li:hover .dropdown {
+        display: none; /* Requer JS para funcionar no mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu com submenu -->
+  <nav class="menu-pro">
+    <ul>
+      <li><a href="#">Início</a></li>
+
+      <!-- Item com submenu dropdown -->
+      <li tabindex="0">
+        <a href="#">Serviços</a>
+        <div class="dropdown">
+          <a href="#">Consultoria</a>
+          <a href="#">Desenvolvimento</a>
+          <a href="#">Design</a>
+        </div>
+      </li>
+
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>
