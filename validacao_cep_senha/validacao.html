@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Validação</title>
+</head>
+<body>
+
+<h2>Formulário de Cadastro</h2>
+
+<!-- Início do formulário -->
+<form id="formulario" action="" method="post" onsubmit="return validarFormulario()">
+    
+    <!-- Campo de Nome -->
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <br><br>
+
+    <!-- Campo de E-mail -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br><br>
+
+    <!-- Campo de Senha -->
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required oninput="mostrarSenha()">
+    <br><br>
+
+    <!-- Campo de Confirmar Senha -->
+    <label for="confirmar_senha">Confirmar Senha:</label>
+    <input type="password" id="confirmar_senha" name="confirmar_senha" required oninput="mostrarSenha()">
+    <br>
+			<!-- Campo para mensagem de confirmação das senhas -->
+    			<div id="mensagem_senha"></div>
+
+    <!-- Campo de Endereço -->
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" name="endereco" required>
+    <br><br>
+
+    <!-- Campo de CEP -->
+    <label for="cep">CEP:</label>
+    <input type="text" id="cep" name="cep" required>
+    <br><br>
+
+    
+    
+    <!-- Campo para mensagem de erro de CEP -->
+    <div id="mensagem_cep"></div>
+
+    <!-- Botão para enviar o formulário -->
+    <button type="submit">Cadastrar</button>
+</form>
+
+<script>
+    // Função para validar os campos do formulário
+    function validarFormulario() {
+        
+        // Obtendo os valores dos campos do formulário
+        var nome = document.getElementById("nome").value;
+        var email = document.getElementById("email").value;
+        var senha = document.getElementById("senha").value;
+        var confirmarSenha = document.getElementById("confirmar_senha").value;
+        var endereco = document.getElementById("endereco").value;
+        var cep = document.getElementById("cep").value;
+
+        // Verificando se algum campo está vazio
+        if (nome == "" || email == "" || senha == "" || confirmarSenha == "" || endereco == "" || cep == "") {
+            alert("Todos os campos são obrigatórios.");
+            return false;
+        }
+
+        // Verificando se as senhas coincidem
+        if (senha !== confirmarSenha) {
+            alert("As senhas não coincidem.");
+            return false;
+        }
+
+        // Validação de formato de email
+        var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(email)) {
+            alert("Email inválido.");
+            return false;
+        }
+
+        // Validação de formato de CEP (apenas números, 8 dígitos)
+        var cepRegex = /^[0-9]{5}-[0-9]{3}$/;
+        if (!cepRegex.test(cep)) {
+            document.getElementById("mensagem_cep").textContent = "CEP inválido. O formato correto é XXXXX-XXX.";
+            document.getElementById("mensagem_cep").style.color = "red";
+            return false; // Impede o envio do formulário
+        } else {
+            document.getElementById("mensagem_cep").textContent = ""; // Limpa a mensagem de erro se o CEP for válido
+        }
+
+        // Se todas as validações passarem, o formulário pode ser enviado
+        return true;
+    }
+
+    // Função para mostrar a senha e verificar se as senhas coincidem
+    function mostrarSenha() {
+        var senha = document.getElementById("senha").value;
+        var confirmarSenha = document.getElementById("confirmar_senha").value;
+
+        var mensagemSenha = document.getElementById("mensagem_senha");
+
+        // Verificando se as senhas coincidem ou não
+        if (senha === confirmarSenha) {
+            mensagemSenha.textContent = "As senhas coincidem.";
+            mensagemSenha.style.color = "green";
+        } else {
+            mensagemSenha.textContent = "As senhas não coincidem.";
+            mensagemSenha.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>
