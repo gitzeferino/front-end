@@ -1,0 +1,52 @@
+<!-- ======================================== -->
+<!-- Arquivo: step5.html - Hover estilizado -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu Progressivo - Etapa 5</title>
+  <style>
+    ul { list-style: none; margin: 0; padding: 0; display: flex; } /* Remove marcadores, zera margens e organiza itens na horizontal */
+    li { position: relative; margin-right: 15px; } /* Espaçamento entre itens e base para submenu */
+    a { text-decoration: none; padding: 6px 10px; display: inline-block; color: #222; } /* Estiliza os links: sem sublinhado, com espaçamento e cor */
+    a:hover { background: #f0f0f0; border-radius: 4px; } /* Efeito hover: fundo cinza claro e cantos arredondados */
+    ul ul { display: none; position: absolute; top: 100%; left: 0; background: #fff; padding: 6px; border-radius: 6px; } /* Submenu inicialmente oculto, posicionado abaixo do item pai, com fundo branco e bordas arredondadas */
+    li:hover > ul { display: block; } /* Exibe submenu ao passar o mouse no item pai */
+
+    /* -------------------------------------------------- */
+    /* BLOCO DE ESTILOS PRINCIPAIS (ETAPA 5)
+       - ul: remove bullets, remove margens/padding, usa flex para alinhar na horizontal
+       - li: cria espaçamento entre itens e permite posicionar submenus relativamente
+       - a: estiliza os links, melhora usabilidade com padding
+       - a:hover: destaca o item quando cursor passa por cima
+       - ul ul: define aparência dos submenus (ocultos até hover)
+       - li:hover > ul: exibe submenu quando o pai é focado pelo hover
+    */
+    </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li>
+        <a href="#">Serviços</a>
+        <ul>
+          <li><a href="#">Consultoria</a></li>
+          <li><a href="#">Desenvolvimento</a></li>
+          <li><a href="#">Suporte</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Produtos</a>
+        <ul>
+          <li><a href="#">Produto A</a></li>
+          <li><a href="#">Produto B</a></li>
+          <li><a href="#">Produto C</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

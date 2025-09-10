@@ -1,0 +1,39 @@
+<!-- ======================================== -->
+<!-- Arquivo: step4.html - Adiciona submenu -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu Progressivo - Etapa 4</title>
+  <style>
+    ul { list-style: none; margin: 0; padding: 0; display: flex; } /* Menu principal horizontal */
+    li { position: relative; margin-right: 15px; } /* Permite posicionar submenu */
+    ul ul { display: none; position: absolute; top: 100%; left: 0; } /* Submenu escondido inicialmente */
+    li:hover > ul { display: block; } /* Exibe submenu ao passar o mouse */
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Serviços</a>
+        <ul>
+          <li><a href="#">Consultoria</a></li>
+          <li><a href="#">Desenvolvimento</a></li>
+          <li><a href="#">Suporte</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Produtos</a>
+        <ul>
+          <li><a href="#">Produto A</a></li>
+          <li><a href="#">Produto B</a></li>
+          <li><a href="#">Produto C</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

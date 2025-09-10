@@ -1,0 +1,52 @@
+<!-- ======================================== -->
+<!-- Arquivo: step6.html - Animações -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu Progressivo - Etapa 6</title>
+   <style>
+    ul { list-style: none; margin: 0; padding: 0; display: flex; } /* Remove marcadores, elimina margens, organiza itens em linha */
+    li { position: relative; margin-right: 15px; } /* Espaçamento lateral e base para posicionar submenus */
+    a { text-decoration: none; padding: 6px 10px; display: inline-block; color: #222; transition: background 0.3s; } /* Links sem sublinhado, espaçados, cor escura e transição suave no fundo */
+    a:hover { background: #f0f0f0; border-radius: 4px; } /* Efeito hover com fundo cinza claro e cantos arredondados */
+    ul ul { display: none; position: absolute; top: 100%; left: 0; background: #fff; padding: 6px; border-radius: 6px; opacity: 0; transition: opacity 0.3s; } /* Submenu oculto por padrão, posicionado abaixo, com fundo branco e transição de opacidade */
+    li:hover > ul { display: block; opacity: 1; } /* Submenu visível ao passar o mouse, com opacidade gradual */
+
+    /* -------------------------------------------------- */
+    /* BLOCO DE ESTILOS PRINCIPAIS (ETAPA 6)
+       - ul: retira marcadores, margens/padding e usa flexbox para horizontalizar o menu
+       - li: cria espaçamento e referência para posicionar o submenu
+       - a: estiliza links com espaçamento, cor e transição suave no hover
+       - a:hover: muda cor de fundo e arredonda bordas ao passar o mouse
+       - ul ul: define submenu oculto, aplica estilo e animação de opacidade
+       - li:hover > ul: ativa o submenu, exibindo-o gradualmente
+    */
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li>
+        <a href="#">Serviços</a>
+        <ul>
+          <li><a href="#">Consultoria</a></li>
+          <li><a href="#">Desenvolvimento</a></li>
+          <li><a href="#">Suporte</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#">Produtos</a>
+        <ul>
+          <li><a href="#">Produto A</a></li>
+          <li><a href="#">Produto B</a></li>
+          <li><a href="#">Produto C</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
